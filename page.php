@@ -17,22 +17,22 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+    <!-- Hero image -->
+    <?php $featured_image = get_the_post_thumbnail_url(get_the_id(), 'full'); ?>
+    <div class="hero-wrapper" style="background-image: url('<?php echo $featured_image; ?>')"></div>
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center py-5">
+                    <h1>We're Getting Married</h1>
+                    <h2>MAY 18TH, 2019 |  BROOKLYN, NY</h2>
+                    <p>We're super excited to have you all with us on our big day and to be able to show you the Brooklyn that we love so dearly. </p>
+                </div>
+            </div>
+        </div>
 
 	</main><!-- #main -->
 
+
 <?php
-get_sidebar();
 get_footer();

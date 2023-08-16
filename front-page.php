@@ -17,15 +17,16 @@ get_header();
 // ACF calls
 $h1_text = get_field('h1_text', 'option');
 $front_page_background_image = get_field('front_page_background_image', 'option');
-
+$cta_button_link = get_field('cta_button_link', 'option');
+var_dump($cta_button_link);
 ?>
 
     <main id="primary-front-page" class="site-main">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1><?php echo $h1_text ?></h1>
-                    <a href="" class="btn btn-outline-light radius-0">Continue to Our Story</a>
+                    <h1 class="mb-5"><?php echo $h1_text ?></h1>
+                    <a href="<?php echo $cta_button_link ?>" class="btn btn-outline-light rounded-0">Continue To Our Story</a>
                 </div>
             </div>
         </div>

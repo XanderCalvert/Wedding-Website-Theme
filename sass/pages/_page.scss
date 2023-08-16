@@ -1,0 +1,11 @@
+#primary {
+    .hero-wrapper {
+        width: 100vw;
+        height: 50vh;
+        background-size: cover;
+        background-position: center bottom; // This ensures the bottom of the image is always visible
+    }
+    h1, h2 {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
