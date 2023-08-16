@@ -24,10 +24,11 @@ $wedding_message = get_field('wedding_message');
                     <h2 class="mb-3"><?php echo $wedding_date; ?> |  <?php echo $wedding_location ?></h2>
                     <p><?php echo $wedding_message ?></p>
                 </div>
+                <hr>
             </div>
         </div>
 
-        <hr>
+        
 
         <p>br</p>
         <p>br</p>
