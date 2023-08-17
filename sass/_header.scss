@@ -1,66 +1,71 @@
 header {
-    position: sticky; // stick to the top as user scrolls
+    position: absolute;
     top: 0;
-    z-index: 1000; // to ensure it stays on top of other content
-    width: 100%; // span full width
-    background-color: transparent; // Initially transparent
+    z-index: 1000;
+    width: 100%;
+    background-color: transparent;
     transition: background-color 0.3s ease;
     nav {
-        background-color: transparent; // Make the button's background transparent
+        background-color: transparent;
         padding: 0 !important;
         .custom-toggler {
             z-index: 1020;
             position: absolute;
-            top: 28px; // Adjust based on your preference
+            top: 28px;
             right: 15px;
             left: auto;
-            background-color: transparent; // Make the button's background transparent
-            border: none; // Remove the border
+            background-color: transparent;
+            border: none;
             &:focus {
                 outline: none;
-                box-shadow: none; // Removes the focus outline
+                box-shadow: none;
             }
         
             .custom-toggler-icon {
-                display: block;  // Ensure it takes up space
-                width: 30px;
-                height: 4px;
-                background-color: #000; // Make the bars black for visibility
+                display: block;
                 position: relative;
-                margin: 0 auto; // Center the icon horizontally
-        
-                &::before,
-                &::after {
-                    content: '';
+                width: 30px;
+                height: 24px;
+                margin: 0 auto;
+            
+                .bar {
+                    background-color: #000;
+                    height: 4px;
+                    width: 100%;
                     position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%; // Full width
-                    height: 4px; // Height of the bars
-                    background-color: #000; // Make these bars black too
-                    transition: all 0.3s; // Smooth transition for animation
-                }
-        
-                &::before {
-                    top: -10px; // Position the top bar
-                }
-        
-                &::after {
-                    top: 10px; // Position the bottom bar
-                }
-
-                &.opened {
-                    &::before {
+                    transition: all 0.3s;
+            
+                    &.bar1 {
                         top: 0;
-                        transform: rotate(45deg); // Rotate the top bar
                     }
-                
-                    &::after {
-                        top: 0;
-                        transform: rotate(-45deg); // Rotate the bottom bar
+            
+                    &.bar2 {
+                        top: 10px;
+                    }
+            
+                    &.bar3 {
+                        top: 20px;
+                    }
+                }
+            
+                &.opened {
+                    .bar1 {
+                        transform: rotate(45deg) translateY(10px) translateX(5px);
+                    }
+            
+                    .bar2 {
+                        opacity: 0;
+                    }
+            
+                    .bar3 {
+                        transform: rotate(-45deg) translateY(-10px) translateX(5px);
                     }
                 }
             }
+            
+        }
+        .desktop-menu {
+            margin: auto;
         }
         .mobile-menu {
             position: fixed;
@@ -68,33 +73,36 @@ header {
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: rgba(255, 255, 255, 0.9); // white background with slight transparency
-            z-index: 1010;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 2010;
             overflow-y: auto;
-            opacity: 0; // Set initial opacity to 0 to hide it
-            pointer-events: none; // This ensures the hidden menu doesn't capture touches/clicks
+            opacity: 0;
+            pointer-events: none;
             transition: transform 0.3s ease-out, opacity 0.3s ease-out;
             display: flex;
-            align-items: center; // vertically center the content
-            justify-content: center; // horizontally center the content
+            align-items: center;
+            justify-content: center;
         
             &.active {
-                transform: translateY(0%); // Show it
-                opacity: 1; // Fully visible
-                pointer-events: auto; // Restore touch/click functionality
+                transform: translateY(0%);
+                opacity: 1;
+                pointer-events: auto;
+
             }
             
             ul {
-                list-style-type: none; // remove bullet points
-                padding: 0; // remove padding
-                text-align: center; // center text
+
+                list-style-type: none;
+                padding: 0;
+                text-align: center;
         
                 li {
-                    margin: 15px 0; // give some space between items
-                    font-weight: normal; // regular weight by default
+                    margin: 15px 0;
+                    font-weight: normal;
                     a {
-                        color: #000; // black text color
-                        text-decoration: none; // remove underlines
+                        color: #000;
+                        text-decoration: none;
+                        z-index: 99999999;
                     }
                 }
             }
@@ -102,14 +110,13 @@ header {
     }
 }
 
-// For desktop:
-@media (min-width: 992px) {  // Adjust breakpoint as per your theme's breakpoints
+@media (min-width: 992px) {
     header nav .custom-toggler {
-        display: none; // Hide the toggle button on desktop
+        display: none;
     }
 
     header nav .collapse {
-        position: static;
+        // position: static;
         background-color: transparent; 
     }
 }

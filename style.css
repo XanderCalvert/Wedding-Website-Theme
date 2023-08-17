@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Matt Calvert
 Author URI: https://calvert.media
 Description: A Wedding Theme
-Version: 1.0.0.1692311679
+Version: 1.0.0.1692313501
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -12048,7 +12048,7 @@ textarea.form-control-lg {
 }
 
 header {
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -12074,35 +12074,38 @@ header nav .custom-toggler:focus {
 }
 header nav .custom-toggler .custom-toggler-icon {
   display: block;
-  width: 30px;
-  height: 4px;
-  background-color: #000;
   position: relative;
+  width: 30px;
+  height: 24px;
   margin: 0 auto;
 }
-header nav .custom-toggler .custom-toggler-icon::before, header nav .custom-toggler .custom-toggler-icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
+header nav .custom-toggler .custom-toggler-icon .bar {
   background-color: #000;
+  height: 4px;
+  width: 100%;
+  position: absolute;
   transition: all 0.3s;
 }
-header nav .custom-toggler .custom-toggler-icon::before {
-  top: -10px;
+header nav .custom-toggler .custom-toggler-icon .bar.bar1 {
+  top: 0;
 }
-header nav .custom-toggler .custom-toggler-icon::after {
+header nav .custom-toggler .custom-toggler-icon .bar.bar2 {
   top: 10px;
 }
-header nav .custom-toggler .custom-toggler-icon.opened::before {
-  top: 0;
-  transform: rotate(45deg);
+header nav .custom-toggler .custom-toggler-icon .bar.bar3 {
+  top: 20px;
 }
-header nav .custom-toggler .custom-toggler-icon.opened::after {
-  top: 0;
-  transform: rotate(-45deg);
+header nav .custom-toggler .custom-toggler-icon.opened .bar1 {
+  transform: rotate(45deg) translateY(10px) translateX(5px);
+}
+header nav .custom-toggler .custom-toggler-icon.opened .bar2 {
+  opacity: 0;
+}
+header nav .custom-toggler .custom-toggler-icon.opened .bar3 {
+  transform: rotate(-45deg) translateY(-10px) translateX(5px);
+}
+header nav .desktop-menu {
+  margin: auto;
 }
 header nav .mobile-menu {
   position: fixed;
@@ -12111,7 +12114,7 @@ header nav .mobile-menu {
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1010;
+  z-index: 2010;
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
@@ -12137,6 +12140,7 @@ header nav .mobile-menu ul li {
 header nav .mobile-menu ul li a {
   color: #000;
   text-decoration: none;
+  z-index: 99999999;
 }
 
 @media (min-width: 992px) {
@@ -12144,7 +12148,6 @@ header nav .mobile-menu ul li a {
     display: none;
   }
   header nav .collapse {
-    position: static;
     background-color: transparent;
   }
 }

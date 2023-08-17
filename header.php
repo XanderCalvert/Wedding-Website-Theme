@@ -50,11 +50,15 @@ foreach ( $theme_menu_location_transient as $key => $menu_item ) {
             <div class="container-fluid">
                 <!-- Toggle Button (same as before) -->
                 <button class="custom-toggler ms-auto" type="button" aria-label="Toggle navigation">
-                    <span class="custom-toggler-icon"></span>
+                    <div class="custom-toggler-icon">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
                 </button>
 
                 <!-- Desktop Menu (same as before) -->
-                <div class="desktop-menu d-none d-lg-block">
+                <div class="desktop-menu d-none d-lg-block py-3">
                     <ul class="navbar-nav mx-auto">
                         <?php echo $menu_output ?>
                     </ul>
