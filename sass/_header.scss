@@ -1,0 +1,115 @@
+header {
+    position: sticky; // stick to the top as user scrolls
+    top: 0;
+    z-index: 1000; // to ensure it stays on top of other content
+    width: 100%; // span full width
+    background-color: transparent; // Initially transparent
+    transition: background-color 0.3s ease;
+    nav {
+        background-color: transparent; // Make the button's background transparent
+        padding: 0 !important;
+        .custom-toggler {
+            z-index: 1020;
+            position: absolute;
+            top: 28px; // Adjust based on your preference
+            right: 15px;
+            left: auto;
+            background-color: transparent; // Make the button's background transparent
+            border: none; // Remove the border
+            &:focus {
+                outline: none;
+                box-shadow: none; // Removes the focus outline
+            }
+        
+            .custom-toggler-icon {
+                display: block;  // Ensure it takes up space
+                width: 30px;
+                height: 4px;
+                background-color: #000; // Make the bars black for visibility
+                position: relative;
+                margin: 0 auto; // Center the icon horizontally
+        
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%; // Full width
+                    height: 4px; // Height of the bars
+                    background-color: #000; // Make these bars black too
+                    transition: all 0.3s; // Smooth transition for animation
+                }
+        
+                &::before {
+                    top: -10px; // Position the top bar
+                }
+        
+                &::after {
+                    top: 10px; // Position the bottom bar
+                }
+
+                &.opened {
+                    &::before {
+                        top: 0;
+                        transform: rotate(45deg); // Rotate the top bar
+                    }
+                
+                    &::after {
+                        top: 0;
+                        transform: rotate(-45deg); // Rotate the bottom bar
+                    }
+                }
+            }
+        }
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9); // white background with slight transparency
+            z-index: 1010;
+            overflow-y: auto;
+            opacity: 0; // Set initial opacity to 0 to hide it
+            pointer-events: none; // This ensures the hidden menu doesn't capture touches/clicks
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            display: flex;
+            align-items: center; // vertically center the content
+            justify-content: center; // horizontally center the content
+        
+            &.active {
+                transform: translateY(0%); // Show it
+                opacity: 1; // Fully visible
+                pointer-events: auto; // Restore touch/click functionality
+            }
+            
+            ul {
+                list-style-type: none; // remove bullet points
+                padding: 0; // remove padding
+                text-align: center; // center text
+        
+                li {
+                    margin: 15px 0; // give some space between items
+                    font-weight: normal; // regular weight by default
+                    a {
+                        color: #000; // black text color
+                        text-decoration: none; // remove underlines
+                    }
+                }
+            }
+        }        
+    }
+}
+
+// For desktop:
+@media (min-width: 992px) {  // Adjust breakpoint as per your theme's breakpoints
+    header nav .custom-toggler {
+        display: none; // Hide the toggle button on desktop
+    }
+
+    header nav .collapse {
+        position: static;
+        background-color: transparent; 
+    }
+}

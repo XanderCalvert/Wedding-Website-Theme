@@ -26,6 +26,19 @@ $wedding_message = get_field('wedding_message');
                 </div>
                 <hr>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Where? -->
+                    <!-- Location photo -->
+                    <!-- Location address -->
+                    <!-- Location map gmaps -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- RSVP -->
+                </div>
+            </div>
         </div>
 
         

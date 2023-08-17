@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Matt Calvert
 Author URI: https://calvert.media
 Description: A Wedding Theme
-Version: 1.0.0
+Version: 1.0.0.1692311679
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -12047,6 +12047,107 @@ textarea.form-control-lg {
   scroll-snap-stop: always;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+header nav {
+  background-color: transparent;
+  padding: 0 !important;
+}
+header nav .custom-toggler {
+  z-index: 1020;
+  position: absolute;
+  top: 28px;
+  right: 15px;
+  left: auto;
+  background-color: transparent;
+  border: none;
+}
+header nav .custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+header nav .custom-toggler .custom-toggler-icon {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #000;
+  position: relative;
+  margin: 0 auto;
+}
+header nav .custom-toggler .custom-toggler-icon::before, header nav .custom-toggler .custom-toggler-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  transition: all 0.3s;
+}
+header nav .custom-toggler .custom-toggler-icon::before {
+  top: -10px;
+}
+header nav .custom-toggler .custom-toggler-icon::after {
+  top: 10px;
+}
+header nav .custom-toggler .custom-toggler-icon.opened::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+header nav .custom-toggler .custom-toggler-icon.opened::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+header nav .mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1010;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav .mobile-menu.active {
+  transform: translateY(0%);
+  opacity: 1;
+  pointer-events: auto;
+}
+header nav .mobile-menu ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+header nav .mobile-menu ul li {
+  margin: 15px 0;
+  font-weight: normal;
+}
+header nav .mobile-menu ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  header nav .custom-toggler {
+    display: none;
+  }
+  header nav .collapse {
+    position: static;
+    background-color: transparent;
+  }
+}
 #primary-front-page {
   height: 100vh;
   width: 100vw;

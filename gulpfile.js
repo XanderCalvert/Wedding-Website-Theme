@@ -17,10 +17,10 @@ const files = {
     jsPaths: [
         'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
         'node_modules/swiper/swiper-bundle.min.js',
-        // 'js/swiper.js',
+        'js/navigation.js',
     ],    
     tsPaths: [
-        // 'ts/functionality.ts',
+        'ts/functionality.ts',
         // 'ts/swiper.ts',
     ]    
 }
