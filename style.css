@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Matt Calvert
 Author URI: https://calvert.media
 Description: A Wedding Theme
-Version: 1.0.0.1692313501
+Version: 1.0.0.1692313921
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -12080,11 +12080,13 @@ header nav .custom-toggler .custom-toggler-icon {
   margin: 0 auto;
 }
 header nav .custom-toggler .custom-toggler-icon .bar {
-  background-color: #000;
+  background-color: black;
   height: 4px;
   width: 100%;
   position: absolute;
   transition: all 0.3s;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 header nav .custom-toggler .custom-toggler-icon .bar.bar1 {
   top: 0;
