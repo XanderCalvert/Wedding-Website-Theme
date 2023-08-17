@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement;
     const header = document.querySelector('#masthead') as HTMLElement;
     const icon = document.querySelector('.custom-toggler-icon') as HTMLElement;
+    const body = document.querySelector('body') as HTMLElement;
 
     if (header) {
         const setHeaderPosition = () => {
@@ -31,11 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     mobileMenu.style.opacity = '0'; // Hide
                     mobileMenu.style.zIndex = '1100'; // Hide
                     mobileMenu.classList.remove('active');
+                    body.style.overflow = 'visible';
                 } else {
                     icon.classList.add('opened');
                     mobileMenu.style.opacity = '1'; // Show
                     mobileMenu.style.zIndex = '1000'; // Show
                     mobileMenu.classList.add('active');
+                    body.style.overflow = 'hidden';
                 }
             }
         });
