@@ -91,7 +91,8 @@ add_action( 'wp_enqueue_scripts', 'wedding_theme_scripts' );
 
 // PHP file imports
 $wedding_includes = array(
-    '/plugins.php'
+    '/plugins.php',
+    '/images.php',
 );
 
 

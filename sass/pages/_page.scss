@@ -8,4 +8,8 @@
     h1, h2 {
         font-family: 'Montserrat', sans-serif;
     }
+    .col-6 img {
+        max-width: 100%;
+        height: auto; // Keeps the aspect ratio
+    }
 }

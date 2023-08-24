@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Matt Calvert
 Author URI: https://calvert.media
 Description: A Wedding Theme
-Version: 1.0.0.1692398449
+Version: 1.0.0.1692917905
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -12191,6 +12191,10 @@ header nav .mobile-menu ul li a {
   background-image: linear-gradient(120deg, rgb(228, 191, 205) 0%, rgb(115, 57, 84) 25%, rgb(191, 131, 78) 50%, rgb(94, 98, 63) 75%, rgb(36, 34, 37) 100%);
   opacity: 0.5;
 }
+#primary-front-page .col-6 img {
+  max-width: 100%;
+  height: auto;
+}
 
 #primary .hero-wrapper {
   width: 100vw;
@@ -12200,4 +12204,8 @@ header nav .mobile-menu ul li a {
 }
 #primary h1, #primary .h1, #primary h2, #primary .h2 {
   font-family: "Montserrat", sans-serif;
+}
+#primary .col-6 img {
+  max-width: 100%;
+  height: auto;
 }
