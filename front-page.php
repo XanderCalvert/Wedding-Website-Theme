@@ -12,7 +12,7 @@
  * @package Wedding_Theme
  */
 
-get_header();
+get_header('fp');
 
 // ACF calls
 $h1_text = get_field('h1_text', 'option');
