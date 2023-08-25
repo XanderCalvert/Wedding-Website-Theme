@@ -17,6 +17,7 @@ const files = {
     jsPaths: [
         'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
         'node_modules/swiper/swiper-bundle.min.js',
+        'node_modules/bs5-lightbox/dist/index.bundle.min.js',
         'js/navigation.js',
     ],    
     tsPaths: [
