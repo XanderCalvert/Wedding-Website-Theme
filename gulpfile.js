@@ -13,11 +13,13 @@ const files = {
     scssPath: [ 
         'sass/*.scss',
         'sass/*/*.scss',
+        './node_modules/mdb-ui-kit/css/mdb.min.css',
     ],
     jsPaths: [
         'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-        'node_modules/swiper/swiper-bundle.min.js',
         'node_modules/bs5-lightbox/dist/index.bundle.min.js',
+        "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+        'node_modules/mdb-ui-kit/js/mdb.min.js',
         'js/navigation.js',
     ],    
     tsPaths: [

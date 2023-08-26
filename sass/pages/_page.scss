@@ -8,8 +8,65 @@
     h1, h2 {
         font-family: 'Montserrat', sans-serif;
     }
-    .col-6 img {
-        max-width: 100%;
+    .col-12 img {
+        width: 100%;
         height: auto; // Keeps the aspect ratio
+        object-fit: cover;
     }
+    .agenda-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .agenda-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        width: 100%;
+    
+        .event {
+            font-weight: bold;
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+        }
+    
+        .time {
+            font-size: 1.7rem;
+            font-family: 'Dancing Script', cursive;
+        }
+    
+        .arrow {
+            color: $caramel;
+            margin-top: 1rem;
+            i {
+                font-size: 1.5em;
+            }
+        }
+    }
+    form {
+        .btn-wrap-text {
+            @include media-breakpoint-down(md) {
+                white-space: normal;
+            }
+        }
+      
+        .btn-group {
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                flex-flow: wrap;
+                .btn {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+    
+    
+    
+
 }

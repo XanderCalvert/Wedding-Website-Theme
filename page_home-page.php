@@ -27,7 +27,7 @@ $wedding_message = get_field('wedding_message');
                 <hr>
             </div>
             <div class="row my-5">
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <?php 
                     $location_picture_src = wp_get_attachment_image_src(get_field('location_picture'), '720p');
                     ?>
@@ -47,18 +47,133 @@ $wedding_message = get_field('wedding_message');
                     echo '<iframe src="' . esc_url($google_maps_url) . '" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
                     ?>
                 </div>
-                <div class="col-6 text-center">
-                    <h2>Agenda for the day</h2>
+                <div class="col-12 col-md-6 text-center">
+                    <h2>Wedding Day Agenda</h2>
+                    <div class="agenda-container">
+                        <div class="agenda-item">
+                            <div class="event">Guest Arrival</div>
+                            <div class="time">14:00</div>
+                            <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="event">Ceremony</div>
+                            <div class="time">15:00</div>
+                            <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="event">Cocktail Hour</div>
+                            <div class="time">16:30</div>
+                            <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="event">Reception</div>
+                            <div class="time">18:00</div>
+                            <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="event">Dinner</div>
+                            <div class="time">19:00</div>
+                            <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="event">Dance & Party</div>
+                            <div class="time">21:00</div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div class="row">
                 <div class="col-12">
-                    <!-- RSVP -->
+                    <h2>RSVP</h2>
+                    <form id="rsvp-form">
+                        <!-- Name Fields -->
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <input type="text" id="first-name" class="form-control" name="first_name" required/>
+                                    <label class="form-label" for="first-name">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <input type="text" id="last-name" class="form-control" name="last_name" required/>
+                                    <label class="form-label" for="last-name">Last Name</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="email" class="form-control" name="email" required/>
+                                    <label class="form-label" for="email">Email Address</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- Attendance Field -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group mb-4">
+                                    <label>Will you be attending?</label><br>
+                                    <div class="btn-group" role="group">
+                                        <input type="radio" class="btn-check" name="attendance" id="yes" autocomplete="off" value="Yes" required>
+                                        <label class="btn btn-secondary btn-wrap-text" for="yes">Yes</label>
+                                        
+                                        <input type="radio" class="btn-check" name="attendance" id="no" autocomplete="off" value="No">
+                                        <label class="btn btn-secondary btn-wrap-text" for="no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dietary Preferences -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group mb-4">
+                                    <label>Dietary Preferences</label><br>
+                                    <div class="btn-group" role="group">
+                                        <input type="radio" class="btn-check" name="meal" id="none" autocomplete="off" value="None">
+                                        <label class="btn btn-secondary btn-wrap-text" for="none">None</label>
+
+                                        <input type="radio" class="btn-check" name="meal" id="vegetarian" autocomplete="off" value="Vegetarian">
+                                        <label class="btn btn-secondary btn-wrap-text" for="vegetarian">Vegetarian</label>
+
+                                        <input type="radio" class="btn-check" name="meal" id="non-vegetarian" autocomplete="off" value="Non-Vegetarian">
+                                        <label class="btn btn-secondary btn-wrap-text" for="non-vegetarian">Non-Vegetarian</label>
+
+                                        <input type="radio" class="btn-check" name="meal" id="vegan" autocomplete="off" value="Vegan">
+                                        <label class="btn btn-secondary btn-wrap-text" for="vegan">Vegan</label>
+
+                                        <input type="radio" class="btn-check" name="meal" id="gluten-free" autocomplete="off" value="Gluten-Free">
+                                        <label class="btn btn-secondary btn-wrap-text" for="gluten-free">Gluten-Free</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Song Requests -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-outline mb-4">
+                                    <textarea class="form-control" id="song" name="song" rows="4"></textarea>
+                                    <label class="form-label" for="song">Song Requests</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
+
+
+
             </div>
         </div>
-
-        
 
         <p>br</p>
         <p>br</p>
